@@ -6,9 +6,9 @@ PASS=0; FAIL=0
 run_test() {
   local name="$1" script="$2"
   if bash "$script"; then
-    echo "  PASS: $name"; ((PASS++))
+    echo "  PASS: $name"; PASS=$((PASS+1))
   else
-    echo "  FAIL: $name"; ((FAIL++))
+    echo "  FAIL: $name"; FAIL=$((FAIL+1))
   fi
 }
 
