@@ -11,11 +11,7 @@
   "plugins": [
     {
       "name": "autopilot",
-      "source": {
-        "source": "url",
-        "url": "https://github.com/pirackr/marketplace.git",
-        "subdir": "autopilot"
-      },
+      "source": "./autopilot",
       "description": "Autonomously executes markdown checklist plans using Opus/Sonnet/Haiku agent tiers",
       "version": "0.1.0"
     }
