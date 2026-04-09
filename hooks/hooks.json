@@ -1,0 +1,15 @@
+{
+  "description": "Autopilot enforcer — re-injects continuation prompt when tasks remain",
+  "hooks": {
+    "Stop": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/stop.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}
