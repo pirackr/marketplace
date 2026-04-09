@@ -211,7 +211,8 @@ jq -n --arg reason "$REASON" --arg msg "$SYS_MSG" \
   "version": "0.1.0",
   "description": "Autonomously executes markdown checklist plans using Opus/Sonnet/Haiku agent tiers",
   "author": {
-    "name": "pirackr"
+    "name": "pirackr",
+    "email": "pirackr.inbox@gmail.com"
   },
   "hooks": "./hooks/hooks.json"
 }

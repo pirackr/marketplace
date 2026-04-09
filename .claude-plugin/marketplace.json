@@ -1,0 +1,23 @@
+{
+  "name": "pirackr",
+  "owner": {
+    "name": "pirackr",
+    "email": "pirackr.inbox@gmail.com"
+  },
+  "metadata": {
+    "description": "Claude Code plugins by pirackr",
+    "version": "1.0.0"
+  },
+  "plugins": [
+    {
+      "name": "autopilot",
+      "source": {
+        "source": "url",
+        "url": "https://github.com/pirackr/claude-autopilot.git",
+        "subdir": "autopilot"
+      },
+      "description": "Autonomously executes markdown checklist plans using Opus/Sonnet/Haiku agent tiers",
+      "version": "0.1.0"
+    }
+  ]
+}

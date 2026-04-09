@@ -39,7 +39,8 @@ Create `/Users/hhnguyen/Working/github.com/pirackr/marketplaces/.claude-plugin/p
   "version": "0.1.0",
   "description": "Autonomously executes markdown checklist plans using Opus/Sonnet/Haiku agent tiers",
   "author": {
-    "name": "pirackr"
+    "name": "pirackr",
+    "email": "pirackr.inbox@gmail.com"
   },
   "hooks": "./hooks/hooks.json"
 }
@@ -132,7 +133,7 @@ Expected: `plugin meta OK`
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add .claude-plugin/plugin.json hooks/hooks.json tests/run-all.sh tests/test-plugin-meta.sh
 git rm settings.json skills/example/SKILL.md
-git commit -m "feat: scaffold plugin structure with manifest and hooks registry"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "feat: scaffold plugin structure with manifest and hooks registry"
 ```
 
 ---
@@ -286,7 +287,7 @@ Expected: `stop-hook tests OK`
 ```bash
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add hooks/stop.sh tests/test-stop-hook.sh
-git commit -m "feat: add Enforcer stop hook with context-size compaction trigger"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "feat: add Enforcer stop hook with context-size compaction trigger"
 ```
 
 ---
@@ -350,7 +351,7 @@ Expected: `---` on line 1, `description:` on line 2
 ```bash
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add commands/autopilot.md
-git commit -m "feat: add /autopilot entry command"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "feat: add /autopilot entry command"
 ```
 
 ---
@@ -431,7 +432,7 @@ Expected: frontmatter with `name:` and `description:`
 ```bash
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add skills/autopilot-orchestrator/SKILL.md
-git commit -m "feat: add Opus orchestrator skill"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "feat: add Opus orchestrator skill"
 ```
 
 ---
@@ -492,7 +493,7 @@ Then use the findings to continue your implementation.
 ```bash
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add skills/autopilot-implementer/SKILL.md
-git commit -m "feat: add Sonnet implementer skill"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "feat: add Sonnet implementer skill"
 ```
 
 ---
@@ -546,7 +547,7 @@ Always return:
 ```bash
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add skills/autopilot-haiku/SKILL.md
-git commit -m "feat: add Haiku research skill"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "feat: add Haiku research skill"
 ```
 
 ---
@@ -612,7 +613,7 @@ Results: 3 passed, 0 failed
 ```bash
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add tests/test-skill-docs.sh
-git commit -m "test: add skill-docs validation, all tests passing"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "test: add skill-docs validation, all tests passing"
 ```
 
 ---
@@ -698,5 +699,5 @@ Expected: `Results: 3 passed, 0 failed`
 cd /Users/hhnguyen/Working/github.com/pirackr/marketplaces
 git add README.md
 git rm hooks/pre-tool-use.sh hooks/post-tool-use.sh
-git commit -m "chore: remove skeleton hooks, add README with usage instructions"
+git commit --author="pirackr <pirackr.inbox@gmail.com>" -m "chore: remove skeleton hooks, add README with usage instructions"
 ```

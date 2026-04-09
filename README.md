@@ -1,11 +1,18 @@
-# autopilot
+# pirackr — Claude Code Marketplace
 
-A Claude Code plugin that autonomously executes markdown checklist plans.
+A Claude Code plugin marketplace by pirackr.
+
+## Available Plugins
+
+- **autopilot** — Autonomously executes markdown checklist plans using Opus/Sonnet/Haiku agent tiers
 
 ## Install
 
+Add this marketplace to Claude Code, then install a plugin:
+
 ```bash
-claude plugins install pirackr/marketplaces
+/plugin marketplace add github:pirackr/claude-autopilot
+/plugin install autopilot@pirackr
 ```
 
 ## Usage
