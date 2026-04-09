@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 set -euo pipefail
+command -v jq >/dev/null 2>&1 || { echo '{}'; exit 0; }
 
 HOOK_INPUT=$(cat)
 SESSION_ID=$(jq -r '.session_id' <<< "$HOOK_INPUT")

@@ -15,7 +15,7 @@ You will receive:
 
 1. Read the plan and find the **first unchecked** `- [ ]` task.
 2. If no unchecked tasks remain:
-   - Remove the state file: `~/.claude/autopilot/active-plan-$CLAUDE_SESSION_ID`
+   - Remove the state file: `~/.claude/autopilot/active-plan-$CLAUDE_CODE_SESSION_ID`
    - Report completion and stop.
 3. Determine the task type:
    - **Implementation** (code changes, file creation, editing, commits) → delegate to Sonnet implementer

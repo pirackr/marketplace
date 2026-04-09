@@ -18,7 +18,7 @@ Arguments: `$ARGUMENTS`
    ```
 5. Write the absolute plan path to the state file:
    ```
-   ~/.claude/autopilot/active-plan-$CLAUDE_SESSION_ID
+   ~/.claude/autopilot/active-plan-$CLAUDE_CODE_SESSION_ID
    ```
 
 ## Orchestration

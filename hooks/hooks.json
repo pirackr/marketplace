@@ -1,5 +1,4 @@
 {
-  "description": "Autopilot enforcer — re-injects continuation prompt when tasks remain",
   "hooks": {
     "Stop": [
       {
