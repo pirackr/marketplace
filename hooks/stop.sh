@@ -2,8 +2,10 @@
 set -euo pipefail
 
 HOOK_INPUT=$(cat)
-SESSION_ID=$(echo "$HOOK_INPUT" | jq -r '.session_id')
-TRANSCRIPT_PATH=$(echo "$HOOK_INPUT" | jq -r '.transcript_path')
+SESSION_ID=$(jq -r '.session_id' <<< "$HOOK_INPUT")
+TRANSCRIPT_PATH=$(jq -r '.transcript_path' <<< "$HOOK_INPUT")
+
+if [ -z "$SESSION_ID" ] || [ "$SESSION_ID" = "null" ]; then exit 0; fi
 
 STATE_DIR="${AUTOPILOT_STATE_DIR:-$HOME/.claude/autopilot}"
 STATE_FILE="${STATE_DIR}/active-plan-${SESSION_ID}"
@@ -19,11 +21,9 @@ if [ ! -f "$PLAN_PATH" ]; then
   exit 0
 fi
 
-# Count tasks (disable pipefail temporarily so grep exit-1 on no-match doesn't abort)
-set +o pipefail
-UNCHECKED=$(grep -E '^\s*- \[ \]' "$PLAN_PATH" 2>/dev/null | wc -l | tr -d ' ')
-CHECKED=$(grep -Ei '^\s*- \[x\]' "$PLAN_PATH" 2>/dev/null | wc -l | tr -d ' ')
-set -o pipefail
+# Count tasks (grep -c prints 0 and exits 1 on no match; || true prevents pipefail abort)
+UNCHECKED=$(grep -c '^\s*- \[ \]' "$PLAN_PATH" 2>/dev/null || true)
+CHECKED=$(grep -ci '^\s*- \[x\]' "$PLAN_PATH" 2>/dev/null || true)
 TOTAL=$((UNCHECKED + CHECKED))
 
 # All done → clean up, allow stop
@@ -57,3 +57,5 @@ fi
 
 jq -n --arg reason "$REASON" --arg msg "$SYS_MSG" \
   '{"decision":"block","reason":$reason,"systemMessage":$msg}'
+
+exit 0
